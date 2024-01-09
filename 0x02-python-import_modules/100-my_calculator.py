@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 
-from  calculator_1 import add, sub, mul, div
-
+from calculator_1 import add, sub, mul, div
 operators = ["+", "-", "*", "/"]
 arg_len = len(argv)
 
