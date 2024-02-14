@@ -1,0 +1,32 @@
+#Test cases for add_integer function
+
+>>> from 0-add_integer import add_integer
+
+# Test case 1: Normal addition
+>>> add_integer(1, 2)
+3
+
+# Test case 2: Addition with negative numbers
+>>> add_integer(100, -2)
+98
+
+# Test case 3: Addition with default value of b
+>>> add_integer(2)
+100
+
+# Test case 4: Addition with float numbers
+>>> add_integer(100.3, -2)
+98
+
+# Test case 5: TypeError - b is not an integer or float
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer or float
+
+# Test case 6: TypeError - a is not an integer or float
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or float
+01~
