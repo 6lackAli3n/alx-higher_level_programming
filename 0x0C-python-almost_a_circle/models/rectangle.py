@@ -34,7 +34,12 @@ class Rectangle(Base):
         Args:
         value (int): The width value to set
         """
-        self.__width = value
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.__width = value
 
     @property
     def height(self):
@@ -48,7 +53,12 @@ class Rectangle(Base):
         Args:
         value (int): The height value to set
         """
-        self.__height = value
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
+        else:
+            self.__height = value
 
     @property
     def x(self):
@@ -62,7 +72,12 @@ class Rectangle(Base):
         Args:
         value (int): The x coordinate value to set
         """
-        self.__x = value
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        elif value < 0:
+            raise ValueError("x must be >= 0")
+        else:
+            self.__x = value
 
     @property
     def y(self):
@@ -75,4 +90,9 @@ class Rectangle(Base):
         Args:
         value (int): The y coordinate value to set
         """
-        self.__y = value
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        elif value < 0:
+            raise ValueError("y must be >= 0")
+        else:
+            self.__y = value
