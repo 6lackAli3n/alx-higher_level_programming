@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ 3-main """
 from models.rectangle import Rectangle
