@@ -26,6 +26,18 @@ class Rectangle(Base):
         """Calculate and return the area of the rectangle"""
         return self.width * self.height
 
+    def display(self):
+        """Print the Rectangle instance with '#' characters, considering x and y"""
+        for i in range(self.y):
+            print()
+        for j in range(self.height):
+            print(" " * self.x + "#" * self.width)
+
+    def __str__(self):
+        """Return a string representation of the Rectangle instance"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
+
     @property
     def width(self):
         """Retrieve the width of the rectangle"""
