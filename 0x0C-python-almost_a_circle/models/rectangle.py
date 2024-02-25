@@ -33,6 +33,13 @@ class Rectangle(Base):
         for j in range(self.height):
             print(" " * self.x + "#" * self.width)
 
+    def update(self, *args):
+        """Assign arguments to each attribute"""
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+
     def __str__(self):
         """Return a string representation of the Rectangle instance"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
