@@ -33,12 +33,18 @@ class Rectangle(Base):
         for j in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assign arguments to each attribute"""
         if args:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i, arg in enumerate(args):
                 setattr(self, attributes[i], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+                else:
+                    raise TypeError("{} attribute does not exist".format(key))
 
     def __str__(self):
         """Return a string representation of the Rectangle instance"""
