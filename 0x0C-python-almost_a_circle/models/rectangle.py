@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Represent a rectangle"""
 
@@ -37,7 +38,8 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Print the Rectangle instance with '#' characters, considering x and y"""
+        """Print the Rectangle instance with '#' characters,
+        considering x and y"""
         for i in range(self.y):
             print()
         for j in range(self.height):
@@ -88,7 +90,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Set the height of the rectangle
-                
+
         Args:
         value (int): The height value to set
         """
@@ -107,7 +109,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Set the x coordinate of the rectangle
-                
+
         Args:
         value (int): The x coordinate value to set
         """

@@ -2,6 +2,7 @@
 """Module that defines a square object"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Class Square that inherits from Rectangle"""
 
@@ -18,18 +19,20 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
     def to_dictionary(self):
         """Returns the dictionary representation of a Square"""
         return {
                 'id': self.id,
-                'size': self.width,  # or self.height, since width and height are equal for a square
+                'size': self.width,
                 'x': self.x,
                 'y': self.y
                 }
 
     def __str__(self):
         """Returns a string representation of the Square"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
