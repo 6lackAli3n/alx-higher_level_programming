@@ -9,6 +9,16 @@ class Square(Rectangle):
         """Initializes a Square instance"""
         super().__init__(size, size, x, y, id)
 
+    def update(self, *args, **kwargs):
+        """Updates the attributes of the square"""
+        if args:
+            attrs = ['id', 'size', 'x', 'y']
+            for attr, value in zip(attrs, args):
+                setattr(self, attr, value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
     def __str__(self):
         """Returns a string representation of the Square"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)

@@ -22,6 +22,16 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
+
     def area(self):
         """Calculate and return the area of the rectangle"""
         return self.width * self.height
