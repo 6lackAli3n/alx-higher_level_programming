@@ -125,9 +125,12 @@ class Base:
             reader = csv.reader(file)
             for row in reader:
                 if cls.__name__ == "Rectangle":
-                    obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                    obj = cls(
+                            int(row[1]), int(
+                                row[2]), int(row[3]), int(row[4]), int(row[0]))
                 elif cls.__name__ == "Square":
-                    obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                    obj = cls(int(row[1]), int(
+                        row[2]), int(row[3]), int(row[0]))
                 instances.append(obj)
             return instances
 
@@ -136,39 +139,26 @@ class Base:
         """Draws all the rectangles and squares using Turtle graphics."""
         screen = turtle.Screen()
         screen.setup(width=800, height=600)
-        screen.title("Drawing Rectangles and Squares")
+        screen.title("Rectangles and Squares")
 
         pen = turtle.Turtle()
-        pen.speed(0)
 
-        # Function to draw a rectangle
-        def draw_rectangle(x, y, width, height):
-            pen.penup()
-            pen.goto(x, y)
-            pen.pendown()
-            pen.setheading(0)
-            for _ in range(2):
-                pen.forward(width)
-                pen.left(90)
-                pen.forward(height)
-                pen.left(90)
-
-        # Function to draw a square
-        def draw_square(x, y, size):
-            pen.penup()
-            pen.goto(x, y)
-            pen.pendown()
-            pen.setheading(0)
-            for _ in range(4):
-                pen.forward(size)
-                pen.left(90)
-
-        # Draw rectangles
         for rectangle in list_rectangles:
-            draw_rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height)
+            pen.penup()
+            pen.goto(rectangle.x, rectangle.y)
+            pen.pendown()
+            for _ in range(2):
+                pen.forward(rectangle.width)
+                pen.left(90)
+                pen.forward(rectangle.height)
+                pen.left(90)
 
-        # Draw squares
         for square in list_squares:
-            draw_square(square.x, square.y, square.size)
+            pen.penup()
+            pen.goto(square.x, square.y)
+            pen.pendown()
+            for _ in range(4):
+                pen.forward(square.size)
+                pen.left(90)
 
         turtle.done()
