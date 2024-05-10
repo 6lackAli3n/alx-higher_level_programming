@@ -1,3 +1,3 @@
 #!/bin/bash
-# Send a request to the provided URL
-curl -s "${1}" | wc -c
+# Get the comtent-lenght of a giving ip address
+curl -sI "$1" | awk '/Content-Length/{print $2}'
