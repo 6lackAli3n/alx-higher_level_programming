@@ -6,11 +6,15 @@ import urllib.parse
 import sys
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    email = sys.argv[2]
+    import urllib.request
+    import urllib.parse
+    import sys
 
-    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
-    req = urllib.request.Request(url, data=data, method='POST')
+    argv = sys.argv
+    url = argv[1]
+    email = argv[2]
+    DATA = urllib.parse.urlencode({"email": email})
+    DATA = DATA.encode('ascii')
 
-    with urllib.request.urlopen(req) as response:
+    with urllib.request.urlopen(url, DATA) as response:
         print(response.read().decode('utf-8'))

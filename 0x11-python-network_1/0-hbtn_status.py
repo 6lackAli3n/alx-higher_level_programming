@@ -1,10 +1,9 @@
-
 #!/usr/bin/python3
 """
 This script fetches https://alx-intranet.hbtn.io/status using urllib
 and displays the body of the response.
 """
-from urllib import request
+import urllib.request
 
 
 if __name__ == "__main__":

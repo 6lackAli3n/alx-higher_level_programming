@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 # Script to fetch the value of X-Request-Id variable from the response header
-import requests
-import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    response = requests.get(url)
-    print(response.headers.get('X-Request-Id'))
+    from requests import get
+    from sys import argv
+
+    res = get(argv[1])
+    print(res.headers.get('X-Request-Id'))
