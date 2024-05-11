@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 # Script to send a POST request with an email parameter to a given URL
 
-import urllib.request
-import urllib.parse
-import sys
 
 if __name__ == "__main__":
     import urllib.request
