@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Script to fetch status from a URL using the requests library
+"""Script to fetch status from a URL using the requests library"""
 import requests
 
 

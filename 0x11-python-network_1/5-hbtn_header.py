@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# Script to fetch the value of X-Request-Id variable from the response header
+"""Script to fetch the value of X-Request-Id variable from the response header
+"""
 
 
 if __name__ == "__main__":
