@@ -3,7 +3,7 @@
 const request = require('request');
 
 const apiUrl = process.argv[2];
-const wedgeId = '18';
+const wedgeId = 18;
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
