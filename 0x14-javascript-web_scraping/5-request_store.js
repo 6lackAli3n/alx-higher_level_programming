@@ -7,16 +7,16 @@ const url = process.argv[2];
 const filePath = process.argv[3];
 
 request.get(url, (error, response, body) => {
-	if (error) {
-		console.error('Error:', error);
-		return;
-	}
+  if (error) {
+    console.error('Error:', error);
+    return;
+  }
 
-	fs.writeFile(filePath, body, 'utf-8', (err) => {
-		if (err) {
-			console.error('Error writing file:', err);
-			return;
-		}
-		console.log(`Successfully saved contents of ${url} to ${filePath}`);
-	});
+  fs.writeFile(filePath, body, 'utf-8', (err) => {
+    if (err) {
+      console.error('Error writing file:', err);
+      return;
+    }
+    console.log(`Successfully saved contents of ${url} to ${filePath}`);
+  });
 });
