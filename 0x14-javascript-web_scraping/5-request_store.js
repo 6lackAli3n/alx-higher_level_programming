@@ -8,15 +8,13 @@ const filePath = process.argv[3];
 
 request.get(url, (error, response, body) => {
   if (error) {
-    console.error('Error:', error);
+    console.error(error);
     return;
   }
 
   fs.writeFile(filePath, body, 'utf-8', (err) => {
     if (err) {
-      console.error('Error writing file:', err);
-      return;
+      console.error(err);
     }
-    console.log(`Successfully saved contents of ${url} to ${filePath}`);
   });
 });
